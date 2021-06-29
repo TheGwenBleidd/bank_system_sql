@@ -187,4 +187,18 @@ ON bankclients.ID = countries.ID
 INNER JOIN cities
 ON bankclients.ID = cities.ID;
 
+--Разбивка клиентов по странам
 
+SELECT countries.CountryName, bankclients.FullName 
+FROM countries 
+inner join bankclients 
+ON bankclients.CountryId = countries.ID
+ORDER BY CountryName DESC;
+
+--Разбивка клиентов по городам 
+
+SELECT cities.CityName, bankclients.FullName
+FROM cities
+inner join bankclients
+on bankclients.CityId = cities.ID
+order by CityName DESC;
