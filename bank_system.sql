@@ -189,14 +189,14 @@ ON bankclients.ID = cities.ID;
 
 
 ---Группировка клиентов по городам
-SELECT cities.CityName, COUNT(bankclients.FullName)
+SELECT cities.CityName, COUNT(bankclients.FullName) As ClientsAmount
 FROM cities
 inner join bankclients
 on bankclients.CityId = cities.ID
 group by CityName;
 
 ---Группировка клиентов по странам
-SELECT countries.CountryName, COUNT(bankclients.FullName)
+SELECT countries.CountryName, COUNT(bankclients.FullName) As ClientsAmount
 FROM countries
 inner join bankclients
 on bankclients.CountryId = countries.ID
